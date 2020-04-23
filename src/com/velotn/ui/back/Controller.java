@@ -1,5 +1,10 @@
 package com.velotn.ui.back;
 
+import com.velotn.entity.Commande;
+import com.velotn.service.ServiceCommande;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,21 +16,19 @@ import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
     @FXML
     private VBox printitems = null;
-
-    @FXML
-    private AnchorPane displayArea;
-
-    @FXML
-    private ScrollPane scrollTable;
 
     @FXML
     private Button btnOrders;
@@ -45,10 +48,32 @@ public class Controller implements Initializable {
     @FXML
     private Button btnSignout;
 
+    @FXML
+    private AnchorPane statsPane;
+
+    @FXML
+    private AnchorPane orderPane;
+
+    @FXML
+    private ScrollPane scrollTable;
+
+    ServiceCommande serviceCommande = new ServiceCommande();
+    List<Commande> commandes = new ArrayList<>();
+
+    private final ObservableList<Commande> data = FXCollections.observableArrayList();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        scrollTable.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        Node [] nodes = new Node[10];
+        data.clear();
+        try {
+            commandes =serviceCommande.readAll() ;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        data.addAll(commandes);
+        System.out.println(data);
+        //scrollTable.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        Node [] nodes = new Node[data.size()];
         for(int i = 0; i < nodes.length; i++){
             try {
 
@@ -79,13 +104,21 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    void close_app(MouseEvent event) {
+    private void close_app(MouseEvent event) {
         System.exit(0);
     }
 
     @FXML
-    void minimize_app(MouseEvent event) {
+    private void minimize_app(MouseEvent event) {
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setIconified(true);
+    }
+
+    @FXML
+    private void changeview(@NotNull ActionEvent actionEvent){
+        if(actionEvent.getSource() == btnOrders)
+            orderPane.toFront();
+        if(actionEvent.getSource() == btnStats)
+            statsPane.toFront();
     }
 }
