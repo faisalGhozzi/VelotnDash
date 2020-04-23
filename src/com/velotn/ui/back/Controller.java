@@ -8,13 +8,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 
@@ -49,20 +52,6 @@ public class Controller implements Initializable {
     @FXML
     private Button btnSignout;
 
-    //Order.fxml elemnts
-
-    @FXML
-    private Label lblUsername;
-
-    @FXML
-    private Label lblDate;
-
-    @FXML
-    private Label lblPrice;
-
-    @FXML
-    private Button orderDetailsBtn;
-
     //Panes
 
     @FXML
@@ -88,9 +77,48 @@ public class Controller implements Initializable {
             throwables.printStackTrace();
         }
         data.addAll(commandes);
-        Node [] nodes = new Node[data.size()];
-        for(int i = 0; i < nodes.length; i++){
-            try {
+        //Node [] nodes = new Node[data.size()];
+        for(int i = 0; i < data.size(); i++){
+
+            //---------HBox Row declaration and styling for Viewing Orders------------
+            HBox row = new HBox();
+            row.prefHeightProperty().setValue(55);
+            row.prefWidthProperty().setValue(920);
+            row.spacingProperty().setValue(200);
+            row.alignmentProperty().setValue(Pos.CENTER);
+            if(i % 2 == 0)
+                row.setStyle("-fx-background-color: #0f0f0f");
+            else
+                row.setStyle("-fx-background-color: #121212");
+
+            row.setOnMouseEntered(event -> row.setStyle("-fx-background-color: #332940"));
+            row.setOnMouseExited(event -> {
+                /*if(i % 2 == 0)
+                    row.setStyle("-fx-background-color: #0f0f0f");
+                else
+                    row.setStyle("-fx-background-color: #121212");*/
+            });
+
+
+
+            //---------Labels and button declaration and styling---------------------------------
+            Label lblUsername = new Label(Integer.toString(data.get(i).getId()));
+            lblUsername.setTextFill(Color.WHITE);
+            Label lblDate = new Label(data.get(i).getDate().toString());
+            lblDate.setTextFill(Color.WHITE);
+            Label lblPrice = new Label(Double.toString(data.get(i).getPrix()));
+            lblPrice.setTextFill(Color.WHITE);
+            Button buttonOrderDetails = new Button("Details");
+            buttonOrderDetails.setTextFill(Color.WHITE);
+            buttonOrderDetails.setStyle("-fx-background-color: transparent;" +
+                                        "-fx-background-radius: 20;" +
+                                        "-fx-border-color: #2a73ff;"+
+                                        "-fx-border-radius: 20");
+
+            row.getChildren().addAll(lblUsername,lblDate,lblPrice,buttonOrderDetails);
+
+            printitems.getChildren().add(row);
+            /*try {
 
                 final int j = i;
 
@@ -114,15 +142,15 @@ public class Controller implements Initializable {
                 lblUsername = new Label(Integer.toString(data.get(i).getId()));
                 lblDate = new Label(data.get(i).getDate().toString());
                 lblPrice = new Label(Double.toString(data.get(i).getPrix()));
-                /*lblUsername.setText(Integer.toString(data.get(i).getId()));
+                lblUsername.setText(Integer.toString(data.get(i).getId()));
                 lblDate.setText(data.get(i).getDate().toString());
-                lblPrice.setText(Double.toString(data.get(i).getPrix()));*/
+                lblPrice.setText(Double.toString(data.get(i).getPrix()));
 
                 printitems.getChildren().add(nodes[i]);
 
             } catch (IOException e) {
                 e.printStackTrace();
-            }
+            }*/
         }
     }
 
