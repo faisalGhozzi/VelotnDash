@@ -2,8 +2,6 @@ package com.velotn.ui.back;
 
 import com.velotn.entity.Commande;
 import com.velotn.service.ServiceCommande;
-import javafx.beans.binding.IntegerBinding;
-import javafx.beans.binding.StringBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,7 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -23,10 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Date;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -116,9 +110,13 @@ public class Controller implements Initializable {
                 else {
                     nodes[i].setStyle("-fx-background-color: #121212");
                 }
+                /*lblUsername = new Label(Integer.toString(data.get(i).getId()));
+                lblDate = new Label(data.get(i).getDate().toString());
+                lblPrice = new Label(Double.toString(data.get(i).getPrix()));*/
                 lblUsername.setText(Integer.toString(data.get(i).getId()));
                 lblDate.setText(data.get(i).getDate().toString());
                 lblPrice.setText(Double.toString(data.get(i).getPrix()));
+
                 printitems.getChildren().add(nodes[i]);
 
             } catch (IOException e) {

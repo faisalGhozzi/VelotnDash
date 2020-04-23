@@ -6,9 +6,9 @@
 
 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="920.0" spacing="195.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label text="Username" textFill="WHITE" />
-      <Label layoutX="10.0" layoutY="29.0" text="11/11/2020" textFill="WHITE" />
-      <Label layoutX="38.0" layoutY="29.0" text="200 TND" textFill="WHITE" />
+      <Label fx:id="lblUsername" text="Username" textFill="WHITE" />
+      <Label fx:id="lblDate" layoutX="10.0" layoutY="29.0" text="11/11/2020" textFill="WHITE" />
+      <Label fx:id="lblPrice" layoutX="38.0" layoutY="29.0" text="200 TND" textFill="WHITE" />
       <Button fx:id="orderDetailsBtn" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-color: #2a73ff; -fx-border-radius: 20;" text="Details" textFill="WHITE" />
    </children>
 </HBox>
