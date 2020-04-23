@@ -94,6 +94,7 @@ public class Controller implements Initializable {
 
                 final int j = i;
 
+
                 nodes[i] = FXMLLoader.load(getClass().getResource("order.fxml"));
                 nodes[i].setOnMouseEntered( event -> nodes[j].setStyle("-fx-background-color: #332940"));
                 nodes[i].setOnMouseExited(event -> {
@@ -110,12 +111,12 @@ public class Controller implements Initializable {
                 else {
                     nodes[i].setStyle("-fx-background-color: #121212");
                 }
-                /*lblUsername = new Label(Integer.toString(data.get(i).getId()));
+                lblUsername = new Label(Integer.toString(data.get(i).getId()));
                 lblDate = new Label(data.get(i).getDate().toString());
-                lblPrice = new Label(Double.toString(data.get(i).getPrix()));*/
-                lblUsername.setText(Integer.toString(data.get(i).getId()));
+                lblPrice = new Label(Double.toString(data.get(i).getPrix()));
+                /*lblUsername.setText(Integer.toString(data.get(i).getId()));
                 lblDate.setText(data.get(i).getDate().toString());
-                lblPrice.setText(Double.toString(data.get(i).getPrix()));
+                lblPrice.setText(Double.toString(data.get(i).getPrix()));*/
 
                 printitems.getChildren().add(nodes[i]);
 
