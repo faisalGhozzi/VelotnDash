@@ -209,7 +209,7 @@
                   </Label>
                </children>
             </HBox>
-            <ScrollPane fx:id="scrollTable" layoutX="40.0" layoutY="239.0" prefHeight="486.0" prefWidth="920.0" style="-fx-background-color: #121212; -fx-background-insets: 0;" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+            <ScrollPane fx:id="scrollTable" layoutX="40.0" layoutY="239.0" prefHeight="486.0" prefWidth="896.0" style="-fx-background-color: #121212; -fx-background-insets: 0;" stylesheets="@../../css/style.css" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
                <content>
                   <VBox fx:id="printitems" prefHeight="472.0" prefWidth="920.0" style="-fx-background-color: #121212;" />
                </content>

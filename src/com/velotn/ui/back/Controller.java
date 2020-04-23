@@ -28,7 +28,22 @@ public class Controller implements Initializable {
     private ScrollPane scrollTable;
 
     @FXML
-    private Button orderDetailsBtn;
+    private Button btnOrders;
+
+    @FXML
+    private Button btnStats;
+
+    @FXML
+    private Button btnProducts;
+
+    @FXML
+    private Button btnDonations;
+
+    @FXML
+    private Button btnComplaints;
+
+    @FXML
+    private Button btnSignout;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -36,7 +51,19 @@ public class Controller implements Initializable {
         Node [] nodes = new Node[10];
         for(int i = 0; i < nodes.length; i++){
             try {
+
+                final int j = i;
+
                 nodes[i] = FXMLLoader.load(getClass().getResource("order.fxml"));
+                nodes[i].setOnMouseEntered( event -> nodes[j].setStyle("-fx-background-color: #332940"));
+                nodes[i].setOnMouseExited(event -> {
+                    if(j % 2 == 0) {
+                        nodes[j].setStyle("-fx-background-color: #0f0f0f");
+                    }
+                    else {
+                        nodes[j].setStyle("-fx-background-color: #121212");
+                    }
+                });
                 if(i % 2 == 0) {
                     nodes[i].setStyle("-fx-background-color: #0f0f0f");
                 }
