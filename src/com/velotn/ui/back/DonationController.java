@@ -41,7 +41,7 @@ public class DonationController implements Initializable {
                 HBox row = new HBox();
                 row.prefHeightProperty().setValue(55);
                 row.prefWidthProperty().setValue(920);
-                row.spacingProperty().setValue(188);
+                row.spacingProperty().setValue(140);
                 row.alignmentProperty().setValue(Pos.CENTER);
                 row.setStyle("-fx-background-color: #121212");
                 row.setOnMouseEntered(event -> row.setStyle("-fx-background-color: #332940"));

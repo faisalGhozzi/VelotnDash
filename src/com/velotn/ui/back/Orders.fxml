@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="747.0" prefWidth="1000.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.velotn.ui.back.OrdersController">
    <children>
       <HBox layoutX="50.0" layoutY="10.0" prefHeight="133.0" prefWidth="920.0" spacing="100.0">
@@ -74,7 +73,7 @@
             <Insets left="100.0" />
          </padding>
       </HBox>
-      <HBox alignment="CENTER" layoutX="50.0" layoutY="166.0" prefHeight="60.0" prefWidth="920.0" spacing="190.0" style="-fx-background-color: #121212;">
+      <HBox alignment="CENTER" layoutX="98.0" layoutY="166.0" prefHeight="60.0" prefWidth="820.0" spacing="190.0" style="-fx-background-color: #121212;">
          <children>
             <Label text="Username" textFill="WHITE">
                <HBox.margin>

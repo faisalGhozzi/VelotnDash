@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="747.0" prefWidth="1000.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.velotn.ui.back.DonationController">
    <children>
-      <HBox alignment="CENTER" layoutX="40.0" layoutY="177.0" prefHeight="60.0" prefWidth="920.0" spacing="190.0" style="-fx-background-color: #121212;">
+      <HBox alignment="CENTER" layoutX="60.0" layoutY="179.0" prefHeight="60.0" prefWidth="376.0" spacing="120.0" style="-fx-background-color: #121212;">
          <children>
             <Label text="Donated Sum" textFill="WHITE">
                <HBox.margin>
@@ -31,9 +31,9 @@
             </Label>
          </children>
       </HBox>
-      <ScrollPane fx:id="scrollTable" layoutX="40.0" layoutY="261.0" prefHeight="486.0" prefWidth="920.0" style="-fx-background-color: #121212; -fx-background-insets: 0;" stylesheets="@../../css/style.css">
+      <ScrollPane fx:id="scrollTable" layoutX="40.0" layoutY="261.0" prefHeight="486.0" prefWidth="403.0" style="-fx-background-color: #121212; -fx-background-insets: 0;" stylesheets="@../../css/style.css">
          <content>
-            <VBox fx:id="printitems" prefHeight="472.0" prefWidth="920.0" style="-fx-background-color: #121212;" />
+            <VBox fx:id="printitems" prefHeight="472.0" prefWidth="409.0" style="-fx-background-color: #121212;" />
          </content>
       </ScrollPane>
    </children>
