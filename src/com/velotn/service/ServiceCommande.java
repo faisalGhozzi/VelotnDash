@@ -64,14 +64,14 @@ public class ServiceCommande implements IService<Commande> {
     public List<Commande> readAll() throws SQLException {
         List<Commande> arr=new ArrayList<>();
         ste=con.createStatement();
-        ResultSet rs = ste.executeQuery("SELECT * FROM commande");
+        ResultSet rs = ste.executeQuery("SELECT * FROM commande inner join fos_user on commande.user_id = fos_user.id");
         while(rs.next()){
-            int id = rs.getInt(1);
-            int userid = rs.getInt(2);
-            Date date =(Date) rs.getObject(3);
-            double prix = rs.getDouble(4);
+            int id = rs.getInt("id");
+            String username = rs.getString("username");
+            Date date =(Date) rs.getObject("date");
+            double prix = rs.getDouble("prix");
 
-            Commande don = new Commande(id,date.toLocalDate(),prix,userid);
+            Commande don = new Commande(id,date.toLocalDate(),prix,username);
             arr.add(don);
         }
         return arr;

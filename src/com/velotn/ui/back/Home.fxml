@@ -3,12 +3,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -17,7 +14,7 @@
       <VBox prefHeight="800.0" prefWidth="280.0" style="-fx-background-color: #0a0a0a;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="164.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="btnOrders" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="174.0" mnemonicParsing="false" onAction="#changeview" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Orders" textFill="WHITE">
+            <Button fx:id="btnOrders" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="174.0" mnemonicParsing="false" onAction="#loadOrders" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Orders" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -32,7 +29,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnStats" alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#changeview" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Statistics" textFill="WHITE">
+            <Button fx:id="btnStats" alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#loadStats" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Statistics" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -47,7 +44,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnProducts" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="226.0" mnemonicParsing="false" onAction="#changeview" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Products" textFill="WHITE">
+            <Button fx:id="btnProducts" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="226.0" mnemonicParsing="false" onAction="#loadProducts" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Products" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -62,7 +59,22 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnDonations" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="278.0" mnemonicParsing="false" onAction="#changeview" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Donations" textFill="WHITE">
+            <Button fx:id="btnGroups" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="294.0" mnemonicParsing="false" onAction="#loadGroups" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Groups" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/group.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnDonations" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="278.0" mnemonicParsing="false" onAction="#loadDonations" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Donations" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -77,7 +89,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnComplaints" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="330.0" mnemonicParsing="false" onAction="#changeview" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Complaints" textFill="WHITE">
+            <Button fx:id="btnComplaints" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="330.0" mnemonicParsing="false" onAction="#loadComplaints" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Complaints" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -92,7 +104,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnSignout" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="382.0" mnemonicParsing="false" onAction="#changeview" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Sign Out" textFill="WHITE">
+            <Button fx:id="btnSignout" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="382.0" mnemonicParsing="false" onAction="#signout" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Sign Out" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -113,119 +125,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <StackPane layoutX="280.0" layoutY="54.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <AnchorPane fx:id="statsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #121212;" />
-            <AnchorPane fx:id="orderPane" prefHeight="747.0" prefWidth="1000.0" style="-fx-background-color: #121212;">
-               <children>
-                  <HBox layoutX="40.0" prefHeight="133.0" prefWidth="920.0" spacing="100.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Total Order" textFill="WHITE">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="10.0" layoutY="10.0" text="250,000" textFill="#476c9b">
-                                 <font>
-                                    <Font name="System Bold" size="24.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Total Sold" textFill="WHITE">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="10.0" layoutY="10.0" text="350,000" textFill="#d36582">
-                                 <font>
-                                    <Font name="System Bold" size="24.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Total Rented" textFill="WHITE">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="10.0" layoutY="10.0" text="150,000" textFill="#832161">
-                                 <font>
-                                    <Font name="System Bold" size="24.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Total Donations" textFill="WHITE">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="10.0" layoutY="10.0" text="1,000" textFill="#4c4c9d">
-                                 <font>
-                                    <Font name="System Bold" size="24.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                     <padding>
-                        <Insets left="100.0" />
-                     </padding>
-                  </HBox>
-                  <HBox alignment="CENTER" layoutX="40.0" layoutY="156.0" prefHeight="60.0" prefWidth="920.0" spacing="190.0" style="-fx-background-color: #121212;" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
-                     <children>
-                        <Label text="Username" textFill="WHITE">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="10.0" layoutY="32.0" text="Order Date" textFill="WHITE">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="96.0" layoutY="32.0" text="Price" textFill="WHITE">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="344.0" layoutY="32.0" text="Show Details" textFill="WHITE">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <ScrollPane fx:id="scrollTable" layoutX="40.0" layoutY="239.0" prefHeight="486.0" prefWidth="896.0" style="-fx-background-color: #121212; -fx-background-insets: 0;" stylesheets="@../../css/style.css" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
-                     <content>
-                        <VBox fx:id="printitems" prefHeight="472.0" prefWidth="920.0" style="-fx-background-color: #121212;" />
-                     </content>
-                  </ScrollPane>
-               </children>
-            </AnchorPane>
-         </children>
-      </StackPane>
+      <AnchorPane fx:id="displyaArea" layoutX="280.0" layoutY="49.0" prefHeight="747.0" prefWidth="1000.0" style="-fx-background-color: #121212;" />
       <Label alignment="CENTER" layoutX="1231.0" layoutY="14.0" onMouseClicked="#close_app" prefHeight="35.0" prefWidth="35.0">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">

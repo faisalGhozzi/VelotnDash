@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="747.0" prefWidth="1000.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.velotn.ui.back.OrdersController">
+   <children>
+      <HBox layoutX="50.0" layoutY="10.0" prefHeight="133.0" prefWidth="920.0" spacing="100.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Total Order" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" text="250,000" textFill="#476c9b">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Total Sold" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" text="350,000" textFill="#d36582">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Total Rented" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" text="150,000" textFill="#832161">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Total Donations" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" text="1,000" textFill="#4c4c9d">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="100.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="50.0" layoutY="166.0" prefHeight="60.0" prefWidth="920.0" spacing="190.0" style="-fx-background-color: #121212;">
+         <children>
+            <Label text="Username" textFill="WHITE">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="32.0" text="Order Date" textFill="WHITE">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="96.0" layoutY="32.0" text="Price" textFill="WHITE">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="344.0" layoutY="32.0" text="Show Details" textFill="WHITE">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <ScrollPane fx:id="scrollTable" layoutX="50.0" layoutY="249.0" prefHeight="486.0" prefWidth="920.0" style="-fx-background-color: #121212; -fx-background-insets: 0;" stylesheets="@../../css/style.css">
+         <content>
+            <VBox fx:id="printitems" prefHeight="472.0" prefWidth="920.0" style="-fx-background-color: #121212;" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -11,6 +11,14 @@ public class Commande {
     private double prix;
     private List<Panier> paniers = new ArrayList<Panier>();
     private int userid;
+    private String username;
+
+    public Commande(int id,LocalDate date,double prix, String username){
+        this.id = id;
+        this.date = date;
+        this.prix = prix;
+        this.username = username;
+    }
 
     public Commande(LocalDate date, double prix, List<Panier> paniers, int userid) {
         this.date = date;
@@ -72,6 +80,14 @@ public class Commande {
 
     public void setPaniers(List<Panier> paniers) {
         this.paniers = paniers;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override
