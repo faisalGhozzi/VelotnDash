@@ -52,7 +52,6 @@ public class ServiceDon implements IService<Don> {
             int id = rs.getInt(1);
             Double somme = rs.getDouble(2);
             Date date = (Date) rs.getObject(3);
-            int userid = rs.getInt(4);
             Don don = new Don(id,somme,date.toLocalDate());
             arr.add(don);
         }
