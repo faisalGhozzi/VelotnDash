@@ -63,9 +63,8 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        Parent fxml = null;
         try {
-            fxml = FXMLLoader.load(getClass().getResource("Orders.fxml"));
+            Parent fxml = FXMLLoader.load(getClass().getResource("Orders.fxml"));
             displyaArea.getChildren().removeAll();
             displyaArea.getChildren().setAll(fxml);
         } catch (IOException e) {
@@ -110,8 +109,10 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    void loadProducts(ActionEvent event) {
-
+    void loadProducts(ActionEvent event) throws IOException{
+        Parent fxml = FXMLLoader.load(getClass().getResource("Products.fxml"));
+        displyaArea.getChildren().removeAll();
+        displyaArea.getChildren().add(fxml);
     }
 
     @FXML

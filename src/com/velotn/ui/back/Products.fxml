@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="747.0" prefWidth="1000.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.velotn.ui.back.ProductsController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1000.0" spacing="100.0">
+         <children>
+            <Button fx:id="viewProductBtn" mnemonicParsing="false" onAction="#loadViewProducts" stylesheets="@../../css/style.css" text="View">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="addProductBtn" layoutX="10.0" layoutY="40.0" mnemonicParsing="false" onAction="#loadAddProducts" stylesheets="@../../css/style.css" text="Add">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <AnchorPane fx:id="productDisplayArea" layoutY="100.0" prefHeight="647.0" prefWidth="1000.0" />
+   </children>
+</AnchorPane>
