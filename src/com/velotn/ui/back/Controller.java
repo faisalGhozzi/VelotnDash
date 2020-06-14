@@ -124,12 +124,4 @@ public class Controller implements Initializable {
     void signout(ActionEvent event) {
 
     }
-
-    /*@FXML
-    private void changeview(@NotNull ActionEvent actionEvent){
-        if(actionEvent.getSource() == btnOrders)
-            orderPane.toFront();
-        if(actionEvent.getSource() == btnStats)
-            statsPane.toFront();
-    }*/
 }

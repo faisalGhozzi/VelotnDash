@@ -47,4 +47,12 @@ public class ProductsAddController implements Initializable {
         addProductsDisplayPane.getChildren().removeAll();
         addProductsDisplayPane.getChildren().add(fxml);
     }
+
+    @FXML
+    void openAddRent(ActionEvent event) throws IOException{
+        Parent fxml = FXMLLoader.load(getClass().getResource("ProductAddRent.fxml"));
+        addProductsDisplayPane.getChildren().removeAll();
+        addProductsDisplayPane.getChildren().add(fxml);
+    }
+
 }

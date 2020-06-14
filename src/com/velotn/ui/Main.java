@@ -1,4 +1,4 @@
-package com.velotn.ui.back;
+package com.velotn.ui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +11,7 @@ public class Main extends Application {
 private double x,y;
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("front/HomeFront.fxml"));
         primaryStage.setScene(new Scene(root));
         //set undecorated
         primaryStage.initStyle(StageStyle.UNDECORATED);

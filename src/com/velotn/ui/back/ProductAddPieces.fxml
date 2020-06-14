@@ -1,8 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="547.0" prefWidth="1000.0" style="-fx-background-color: #c3fc60;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.velotn.ui.back.ProductAddPiecesController">
-
+<AnchorPane prefHeight="547.0" prefWidth="1000.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.velotn.ui.back.ProductAddPiecesController">
+   <children>
+      <VBox alignment="CENTER_LEFT">
+         <children>
+            <Label text="New Spare Part" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER_LEFT" prefHeight="462.0" prefWidth="231.0" spacing="20.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefWidth="100.0" spacing="10.0">
+                     <children>
+                        <Label text="Product Name :" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="TF_nomProd" stylesheets="@../../css/style.css" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="214.0" prefWidth="100.0" spacing="10.0">
+                     <children>
+                        <Label text="Details :" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="TF_description" styleClass="text-field" stylesheets="@../../css/style.css" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="251.0" prefWidth="100.0" spacing="10.0">
+                     <children>
+                        <Label text="Model :" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="TF_marque" styleClass="text-field" stylesheets="@../../css/style.css" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="364.0" prefWidth="100.0" spacing="10.0">
+                     <children>
+                        <Label text="Type :" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="TF_type" styleClass="text-field" stylesheets="@../../css/style.css" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="289.0" prefWidth="100.0" spacing="10.0">
+                     <children>
+                        <Label text="Price :" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="TF_prix" styleClass="text-field" stylesheets="@../../css/style.css" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="326.0" prefWidth="100.0" spacing="10.0">
+                     <children>
+                        <Label text="Quantity :" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="TF_quantite" styleClass="text-field" stylesheets="@../../css/style.css" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="50.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
 </AnchorPane>
