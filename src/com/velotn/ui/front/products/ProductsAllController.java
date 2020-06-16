@@ -1,21 +1,24 @@
 package com.velotn.ui.front.products;
 
-import com.velotn.entity.Accessoire;
-import com.velotn.entity.Piece_Rechange;
-import com.velotn.entity.Produit;
-import com.velotn.entity.Velo;
+import com.velotn.entity.*;
 import com.velotn.service.ServicePanier;
 import com.velotn.service.ServiceProduit;
+import com.velotn.ui.front.Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -66,34 +69,79 @@ public class ProductsAllController implements Initializable {
         clearDataAndAdd();
         GridPane gridPane = new GridPane();
         for(int i = 0;i<produits.size();i++){
-            for(int j=0;j<5;j++){
                 Label label = new Label(produits.get(i).getNomProduit());
-                Label label1 = new Label(String.valueOf(produits.get(i).getPrix()));
+                label.setStyle("-fx-font-family: Quicksand;" +
+                                "-fx-font-size: 30px;");
+                String url = "file:"+getImageFullUrl(produits.get(i).getImg_url());
+                Image image = new Image(url);
+                ImageView imageView = new ImageView(image);
+                imageView = imageSets(imageView);
+                Label label1 = new Label(String.valueOf(produits.get(i).getPrix())+" TND");
+                label1.setStyle("-fx-font-family: Quicksand;" +
+                                "-fx-font-size: 30px");
                 Button btn = new Button("Preview");
                 Button btn1 = new Button("Buy");
                 HBox hBox = new HBox();
-                hBox.getChildren().addAll(btn,btn1);
                 VBox vBox = new VBox();
-                vBox.getChildren().addAll(label,label1,hBox);
-                gridPane.add(vBox,i,j,1,1);
-            }
+                if(Controller.getUserId() == 0){
+                    btn.setStyle(   "-fx-background-radius: 0;" +
+                            "-fx-border-color: transparent;" +
+                            "-fx-border-width: 0;" +
+                            "-fx-background-color: #bb8cfc;" +
+                            "-fx-font-size: 14px;" +
+                            "-fx-text-fill: #ffffff;" +
+                            "-fx-pref-height: 40;" +
+                            "-fx-pref-width: 200;"
+                    );
+
+                    hBox.setAlignment(Pos.CENTER);
+                    hBox.setSpacing(0);
+                    hBox.getChildren().addAll(btn);
+                    vBox.setAlignment(Pos.CENTER);
+                    vBox.getChildren().addAll(label,imageView,label1,hBox);
+                    gridPane.addColumn(i,vBox);
+                }else{
+                    btn.setStyle(   "-fx-background-radius: 0;" +
+                            "-fx-border-color: transparent;" +
+                            "-fx-border-width: 0;" +
+                            "-fx-background-color: #bb8cfc;" +
+                            "-fx-font-size: 14px;" +
+                            "-fx-text-fill: #ffffff;" +
+                            "-fx-pref-height: 40;" +
+                            "-fx-pref-width: 100;"
+                    );
+                    btn1.setStyle(   "-fx-background-radius: 0;" +
+                            "-fx-border-color: transparent;" +
+                            "-fx-border-width: 0;" +
+                            "-fx-background-color: #B3EFB2;" +
+                            "-fx-font-size: 14px;" +
+                            "-fx-text-fill: #ffffff;" +
+                            "-fx-pref-height: 40;" +
+                            "-fx-pref-width: 100;"
+                    );
+                    int finalI = i;
+                    btn1.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            Panier panier = new Panier(produits.get(finalI).getId(),1,produits.get(finalI).getPrix(),Controller.getUserId());
+                            try{
+                                servicePanier.ajouter(panier);
+                            }catch (SQLException e){
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    hBox.setAlignment(Pos.CENTER);
+                    hBox.setSpacing(0);
+                    hBox.getChildren().addAll(btn,btn1);
+                    vBox.setAlignment(Pos.CENTER);
+                    vBox.getChildren().addAll(label,imageView,label1,hBox);
+                    gridPane.addColumn(i,vBox);
+                }
         }
 
-
-        /*Button button1 = new Button("Button 1");
-        Button button2 = new Button("Button 2");
-        Button button3 = new Button("Button 3");
-        Button button4 = new Button("Button 4");
-        Button button5 = new Button("Button 5");
-        Button button6 = new Button("Button 6");*/
-
-        /*gridPane.add(button1, 0, 0, 1, 1);
-        gridPane.add(button2, 1, 0, 1, 1);
-        gridPane.add(button3, 2, 0, 1, 1);
-        gridPane.add(button4, 0, 1, 1, 1);
-        gridPane.add(button5, 1, 1, 1, 1);
-        gridPane.add(button6, 2, 1, 1, 1);*/
-
+        gridPane.setHgap(50);
+        gridPane.setVgap(50);
         gridPane.translateXProperty().bind(
                 showProd.widthProperty().subtract(gridPane.widthProperty()).divide(2)
         );
@@ -101,5 +149,21 @@ public class ProductsAllController implements Initializable {
                 showProd.heightProperty().subtract(gridPane.heightProperty()).divide(2)
         );
         showProd.getChildren().add(gridPane);
+    }
+
+    private String getImageFullUrl(String img_url) {
+        img_url= img_url.replace('/','\\');
+        img_url = "C:\\wamp64\\www\\velotnWeb\\web"+img_url;
+        return img_url;
+    }
+
+    private ImageView imageSets(ImageView imageView) {
+        imageView.setFitWidth(200);
+        imageView.setFitHeight(150);
+        imageView.setPreserveRatio(false);
+        imageView.setSmooth(true);
+        imageView.setCache(true);
+
+        return imageView;
     }
 }

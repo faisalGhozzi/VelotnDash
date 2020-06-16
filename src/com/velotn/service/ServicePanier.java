@@ -51,13 +51,13 @@ public class ServicePanier implements IService<Panier> {
         ste=con.createStatement();
         ResultSet rs = ste.executeQuery("SELECT * FROM panier inner join produits on panier.produit_id = produits.id");
         while(rs.next()){
-            int id = rs.getInt(1);
-            int produit_id = rs.getInt(2);
-            int qte = rs.getInt(3);
-            Double prix_unitaire = rs.getDouble(4);
-            Double prix_total = rs.getDouble(5);
-            int user_id = rs.getInt(6);
-            String url = rs.getString(8);
+            int id = rs.getInt("id");
+            int produit_id = rs.getInt("produit_id");
+            int qte = rs.getInt("qte");
+            Double prix_unitaire = rs.getDouble("prix_unitaire");
+            Double prix_total = rs.getDouble("prix_total");
+            int user_id = rs.getInt("user_id");
+            String url = rs.getString("img_url");
             Panier panier = new Panier(id,produit_id,qte,prix_unitaire,prix_total,user_id,url);
             arr.add(panier);
         }

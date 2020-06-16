@@ -158,6 +158,9 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    void showCart(ActionEvent event) {
+    void showCart(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("PanierUi.fxml"));
+        displyaArea.getChildren().removeAll();
+        displyaArea.getChildren().add(fxml);
     }
 }

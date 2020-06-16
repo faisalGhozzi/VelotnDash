@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.velotn.ui.front;
+package com.velotn.ui.front.groups;
 
 import com.jfoenix.controls.*;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import com.velotn.entity.Groups;
 import com.velotn.service.GroupeService;
+import com.velotn.ui.front.Controller;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -105,7 +106,7 @@ GroupeService service = new GroupeService();
             });
 
         } catch (IOException ex) {
-            Logger.getLogger(com.velotn.ui.front.AjoutGroupeController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AjoutGroupeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     
     }    
@@ -165,7 +166,7 @@ GroupeService service = new GroupeService();
                 fis = new FileInputStream(Current_file);
                 file_image = Current_file.getName();
             } catch (FileNotFoundException ex) {
-                Logger.getLogger(com.velotn.ui.front.AjoutGroupeController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AjoutGroupeController.class.getName()).log(Level.SEVERE, null, ex);
             }
             
         }
@@ -186,7 +187,7 @@ GroupeService service = new GroupeService();
         } catch (IOException ex) {
 
             Logger.getLogger(
-                    com.velotn.ui.front.AjoutGroupeController.class.getName()).log(
+                    AjoutGroupeController.class.getName()).log(
                     Level.SEVERE, null, ex
             );
         }

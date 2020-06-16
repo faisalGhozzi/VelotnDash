@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="747.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.velotn.ui.front.products.ProductsController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1000.0" spacing="100.0">
+         <children>
+            <Button fx:id="frontAllProductBtn" mnemonicParsing="false" onAction="#loadDisplayGroups" stylesheets="@../../../css/style.css" text="Display">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="frontBikeProductBtn" mnemonicParsing="false" onAction="#loadAddGroup" stylesheets="@../../../css/style.css" text="Add">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <AnchorPane fx:id="groupsDisplayArea" layoutY="100.0" prefHeight="647.0" prefWidth="1000.0" />
+   </children>
+</AnchorPane>

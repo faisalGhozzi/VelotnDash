@@ -34,33 +34,54 @@ public class ProductsController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        Parent fxml = null;
+        try {
+            fxml = FXMLLoader.load(getClass().getResource("ProductsAll.fxml"));
+            productDisplayArea.getChildren().removeAll();
+            productDisplayArea.getChildren().clear();
+            productDisplayArea.getChildren().add(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
-    void loadAccessoriesProducts(ActionEvent event) {
-
+    void loadAccessoriesProducts(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("ProductsAccessories.fxml"));
+        productDisplayArea.getChildren().removeAll();
+        productDisplayArea.getChildren().clear();
+        productDisplayArea.getChildren().add(fxml);
     }
 
     @FXML
     void loadAllProducts(ActionEvent event) throws IOException {
         Parent fxml = FXMLLoader.load(getClass().getResource("ProductsAll.fxml"));
         productDisplayArea.getChildren().removeAll();
+        productDisplayArea.getChildren().clear();
         productDisplayArea.getChildren().add(fxml);
     }
 
     @FXML
-    void loadBikesProducts(ActionEvent event) {
-
+    void loadBikesProducts(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("ProductsBikes.fxml"));
+        productDisplayArea.getChildren().removeAll();
+        productDisplayArea.getChildren().clear();
+        productDisplayArea.getChildren().add(fxml);
     }
 
     @FXML
-    void loadPartsProducts(ActionEvent event) {
-
+    void loadPartsProducts(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("ProductsParts.fxml"));
+        productDisplayArea.getChildren().removeAll();
+        productDisplayArea.getChildren().clear();
+        productDisplayArea.getChildren().add(fxml);
     }
 
     @FXML
-    void loadRentProducts(ActionEvent event) {
-
+    void loadRentProducts(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("ProductsRent.fxml"));
+        productDisplayArea.getChildren().removeAll();
+        productDisplayArea.getChildren().clear();
+        productDisplayArea.getChildren().add(fxml);
     }
 }

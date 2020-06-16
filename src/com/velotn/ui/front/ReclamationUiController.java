@@ -1,11 +1,12 @@
-package com.velotn.ui.back;
+package com.velotn.ui.front;
 
 import javafx.fxml.Initializable;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ProductsViewController implements Initializable {
+public class ReclamationUiController implements Initializable {
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

@@ -1,4 +1,4 @@
-package com.velotn.ui.back;
+package com.velotn.ui.back.products;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

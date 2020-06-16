@@ -12,6 +12,7 @@ private double x,y;
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("front/HomeFront.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("back/Home.fxml"));
         primaryStage.setScene(new Scene(root));
         //set undecorated
         primaryStage.initStyle(StageStyle.UNDECORATED);

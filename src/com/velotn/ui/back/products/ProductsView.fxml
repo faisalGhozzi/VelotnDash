@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane prefHeight="647.0" prefWidth="1000.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.velotn.ui.back.products.ProductsViewController">
+   <children>
+      <TabPane layoutX="23.0" layoutY="16.0" prefHeight="602.0" prefWidth="791.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Liste des Produits">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="listeProduits" focusTraversable="false" prefHeight="443.0" prefWidth="733.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="Nom_Produit" prefWidth="111.0" resizable="false" sortable="false" text="Nom Produit" />
+                              <TableColumn fx:id="Description" prefWidth="128.0" resizable="false" sortable="false" text="Description" />
+                              <TableColumn fx:id="Prix" prefWidth="110.0" resizable="false" text="Prix" />
+                              <TableColumn fx:id="Marque" prefWidth="122.0" resizable="false" sortable="false" text="Marque" />
+                              <TableColumn fx:id="Type" prefWidth="159.0" resizable="false" sortable="false" text="Type" />
+                              <TableColumn fx:id="Quantite" prefWidth="153.0" resizable="false" text="Quantite" />
+                           </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+               </content>
+            </Tab>
+            <Tab text="Velos">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="listeVelos" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="nomV" onEditCommit="#Changer_NomProduitVelo" prefWidth="127.0" resizable="false" text="Nom Produit" />
+                              <TableColumn fx:id="DescriptionV" onEditCommit="#Changer_DescriptionVelo" prefWidth="88.0" resizable="false" text="Description" />
+                              <TableColumn fx:id="PrixV" onEditCommit="#Changer_PrixVelo" prefWidth="63.0" resizable="false" text="Prix" />
+                              <TableColumn fx:id="MarqueV" prefWidth="89.0" resizable="false" text="Marque" />
+                              <TableColumn fx:id="TypeV" prefWidth="93.0" resizable="false" text="Type" />
+                              <TableColumn fx:id="QuantiteV" onEditCommit="#Changer_QuantiteVelo" prefWidth="113.0" resizable="false" text="Quantite" />
+                           </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+               </content>
+            </Tab>
+            <Tab text="Pieces de rechanges">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="listePieces" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="nomP" onEditCommit="#Changer_NomProduitPiece" prefWidth="106.0" resizable="false" text="Nom Produit" />
+                              <TableColumn fx:id="descriptionP" minWidth="7.0" onEditCommit="#Changer_DescriptionPiece" prefWidth="117.0" resizable="false" text="Description" />
+                              <TableColumn fx:id="prixP" onEditCommit="#Changer_PrixPiece" prefWidth="76.0" resizable="false" text="Prix" />
+                              <TableColumn fx:id="marqueP" minWidth="4.0" prefWidth="99.0" resizable="false" text="Marque" />
+                              <TableColumn fx:id="typeP" prefWidth="103.0" resizable="false" text="Type" />
+                              <TableColumn fx:id="quantiteP" minWidth="8.0" onEditCommit="#Changer_QuantitePiece" prefWidth="144.0" resizable="false" text="Quantite" />
+                           </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+               </content>
+            </Tab>
+            <Tab text="Accessoires">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="listeAccessoires" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="nomA" onEditCommit="#Changer_NomProduitAcc" prefWidth="109.0" resizable="false" text="Nom Produit" />
+                              <TableColumn fx:id="descriptionA" onEditCommit="#Changer_DescriptionAcc" prefWidth="72.0" resizable="false" text="Description" />
+                              <TableColumn fx:id="prixA" onEditCommit="#Changer_PrixAcc" prefWidth="104.0" resizable="false" text="Prix" />
+                              <TableColumn fx:id="marqueA" prefWidth="78.0" resizable="false" text="Marque" />
+                              <TableColumn fx:id="typeA" prefWidth="83.0" resizable="false" text="Type" />
+                              <TableColumn fx:id="quantiteA" onEditCommit="#Changer_QuantiteAcc" prefWidth="101.0" resizable="false" text="Quantite" />
+                           </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Button layoutX="848.0" layoutY="127.0" mnemonicParsing="false" onAction="#SupprimerVelo" styleClass="buttonDelete" stylesheets="@../../../css/ButtonStyle.css" text="Remove Bike" />
+      <Button layoutX="848.0" layoutY="190.0" mnemonicParsing="false" onAction="#SupprimerPiece" styleClass="buttonDelete" stylesheets="@../../../css/ButtonStyle.css" text="Remove Piece" />
+      <Button layoutX="848.0" layoutY="256.0" mnemonicParsing="false" onAction="#SupprimerAccessoire" styleClass="buttonDelete" stylesheets="@../../../css/ButtonStyle.css" text="Remove Acc" />
+      <TextField fx:id="recherche" layoutX="824.0" layoutY="38.0" onInputMethodTextChanged="#RechercheAV" promptText="Recherche" />
+   </children>
+</AnchorPane>
