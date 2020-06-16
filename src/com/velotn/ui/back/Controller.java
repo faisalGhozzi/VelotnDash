@@ -86,14 +86,21 @@ public class Controller implements Initializable {
     @FXML
     void loadComplaints(ActionEvent event) throws IOException{
         Parent fxml = FXMLLoader.load(getClass().getResource("Reclamation.fxml"));
-        displyaArea.getChildren().removeAll();
+        displyaArea.getChildren().clear();
+        displyaArea.getChildren().add(fxml);
+    }
+
+    @FXML
+    void loadEvents(ActionEvent event) throws IOException{
+        Parent fxml = FXMLLoader.load(getClass().getResource("./events/Events.fxml"));
+        displyaArea.getChildren().clear();
         displyaArea.getChildren().add(fxml);
     }
 
     @FXML
     void loadDonations(ActionEvent event) throws IOException {
         Parent fxml = FXMLLoader.load(getClass().getResource("Donations.fxml"));
-        displyaArea.getChildren().removeAll();
+        displyaArea.getChildren().clear();
         displyaArea.getChildren().add(fxml);
     }
 
@@ -105,14 +112,14 @@ public class Controller implements Initializable {
     @FXML
     void loadOrders(ActionEvent event) throws IOException {
         Parent fxml = FXMLLoader.load(getClass().getResource("Orders.fxml"));
-        displyaArea.getChildren().removeAll();
+        displyaArea.getChildren().clear();
         displyaArea.getChildren().add(fxml);
     }
 
     @FXML
     void loadProducts(ActionEvent event) throws IOException{
         Parent fxml = FXMLLoader.load(getClass().getResource("products/Products.fxml"));
-        displyaArea.getChildren().removeAll();
+        displyaArea.getChildren().clear();
         displyaArea.getChildren().add(fxml);
     }
 

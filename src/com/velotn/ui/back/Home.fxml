@@ -29,6 +29,21 @@
                   <Font size="14.0" />
                </font>
             </Button>
+            <Button fx:id="btnEvents" alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#loadEvents" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Events" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/events.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
             <Button fx:id="btnStats" alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#loadStats" prefHeight="60.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Statistics" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">

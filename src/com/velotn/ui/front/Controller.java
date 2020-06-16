@@ -83,7 +83,7 @@ public class Controller implements Initializable {
 
         try{
             Parent fxml = FXMLLoader.load(getClass().getResource("./products/Products.fxml"));
-            displyaArea.getChildren().removeAll();
+            displyaArea.getChildren().clear();
             displyaArea.getChildren().setAll(fxml);
         }catch (IOException e){
             e.printStackTrace();
@@ -105,7 +105,7 @@ public class Controller implements Initializable {
     void openShop(ActionEvent event) {
         try{
             Parent fxml = FXMLLoader.load(getClass().getResource("./products/Products.fxml"));
-            displyaArea.getChildren().removeAll();
+            displyaArea.getChildren().clear();
             displyaArea.getChildren().setAll(fxml);
         }catch (IOException e){
             e.printStackTrace();
@@ -115,7 +115,7 @@ public class Controller implements Initializable {
     @FXML
     void showDonate(ActionEvent event) throws IOException {
         Parent fxml = FXMLLoader.load(getClass().getResource("DonUi.fxml"));
-        displyaArea.getChildren().removeAll();
+        displyaArea.getChildren().clear();
         displyaArea.getChildren().add(fxml);
     }
 
@@ -125,7 +125,10 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    void showGroups(ActionEvent event) {
+    void showGroups(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("./groups/GroupeUi.fxml"));
+        displyaArea.getChildren().clear();
+        displyaArea.getChildren().add(fxml);
 
     }
 
@@ -160,7 +163,7 @@ public class Controller implements Initializable {
     @FXML
     void showCart(ActionEvent event) throws IOException {
         Parent fxml = FXMLLoader.load(getClass().getResource("PanierUi.fxml"));
-        displyaArea.getChildren().removeAll();
+        displyaArea.getChildren().clear();
         displyaArea.getChildren().add(fxml);
     }
 }

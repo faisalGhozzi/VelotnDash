@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="747.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.velotn.ui.front.products.ProductsController">
+<AnchorPane prefHeight="747.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.velotn.ui.front.groups.GroupeUiController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1000.0" spacing="100.0">
          <children>
