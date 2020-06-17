@@ -116,6 +116,14 @@ public class Controller implements Initializable {
         displyaArea.getChildren().add(fxml);
     }
 
+
+    @FXML
+    void loadPromotion(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("Promotion.fxml"));
+        displyaArea.getChildren().clear();
+        displyaArea.getChildren().add(fxml);
+    }
+
     @FXML
     void loadProducts(ActionEvent event) throws IOException{
         Parent fxml = FXMLLoader.load(getClass().getResource("products/Products.fxml"));

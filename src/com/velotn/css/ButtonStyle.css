@@ -44,6 +44,7 @@
     -fx-font-family: Quicksand;
     -fx-background-radius: 0;
     -fx-border-radius: 0;
+    -fx-text-fill: white;
     -fx-pref-width: 100;
     -fx-pref-height: 40;
     -fx-opacity: 1.0;
@@ -55,8 +56,33 @@
     -fx-font-family: Quicksand;
     -fx-background-radius: 0;
     -fx-border-radius: 0;
+    -fx-text-fill: white;
     -fx-pref-width: 100;
     -fx-pref-height: 40;
+    -fx-opacity: 0.6;
+}
+
+.buttonSafe{
+    -fx-background-color: #1fe5bc;
+    -fx-border-color: transparent;
+    -fx-font-family: Quicksand;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-pref-width: 100;
+    -fx-pref-height: 40;
+    -fx-text-fill: white;
+    -fx-opacity: 1.0;
+}
+
+.buttonSafe:hover{
+    -fx-background-color: #1fe5bc;
+    -fx-border-color: transparent;
+    -fx-font-family: Quicksand;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-pref-width: 100;
+    -fx-pref-height: 40;
+    -fx-text-fill: white;
     -fx-opacity: 0.6;
 }
 

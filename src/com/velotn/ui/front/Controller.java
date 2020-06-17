@@ -75,7 +75,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if(this.getUserId()==0){
+        if(userId==0){
             sidemenu.getChildren().removeAll(btnProfile,btnLogout,btnCart,btnWish,btnComplaints);
         }else{
             sidemenu.getChildren().removeAll(btnSignin);
@@ -133,8 +133,10 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    void showProfile(ActionEvent event) {
-
+    void showProfile(ActionEvent event) throws IOException{
+        Parent fxml = FXMLLoader.load(getClass().getResource("./profile/ProfileUi.fxml"));
+        displyaArea.getChildren().clear();
+        displyaArea.getChildren().add(fxml);
     }
 
     @FXML
@@ -151,13 +153,16 @@ public class Controller implements Initializable {
 
     @FXML
     void showLogout(ActionEvent event) {
-        this.setUserId(0);
+        userId=0;
         sidemenu.getChildren().removeAll(btnLogout,btnSignin,btnProfile,btnShop,btnComplaints,btnDonate,btnEvents,btnGroups,btnCart,btnWish);
         sidemenu.getChildren().addAll(btnShop,btnEvents,btnGroups,btnDonate,btnSignin);
     }
 
     @FXML
-    void showWish(ActionEvent event) {
+    void showWish(ActionEvent event) throws IOException{
+        Parent fxml = FXMLLoader.load(getClass().getResource("WishlistUi.fxml"));
+        displyaArea.getChildren().clear();
+        displyaArea.getChildren().add(fxml);
     }
 
     @FXML

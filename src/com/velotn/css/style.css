@@ -324,7 +324,7 @@
     -fx-background-radius: 0;
     -fx-background-color: transparent;
     -fx-font-size: 14px;
-    -fx-text-fill: white;
+    -fx-text-fill: black;
     -fx-pref-height: 40;
     -fx-pref-width: 100;
 }
@@ -335,6 +335,54 @@
     -fx-border-width: 0;
     -fx-background-radius: 0;
     -fx-background-color: #bb8cfc;
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+.fancyBtnLg{
+    -fx-border-color: #bb8cfc;
+    -fx-border-radius: 0;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+    -fx-pref-height: 40;
+    -fx-pref-width: 200;
+}
+
+.fancyBtnLg:hover{
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #bb8cfc;
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+    -fx-pref-height: 40;
+    -fx-pref-width: 200;
+}
+
+.fancyBtnGn{
+    -fx-border-color: #31f1ab;
+    -fx-border-radius: 0;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+.fancyBtnGn:hover{
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #31f1ab;
     -fx-font-size: 14px;
     -fx-text-fill: #ffffff;
     -fx-pref-height: 40;

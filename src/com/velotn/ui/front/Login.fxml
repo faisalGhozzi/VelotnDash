@@ -21,18 +21,18 @@
       </MediaView>
       <AnchorPane layoutX="594.0" layoutY="86.0" prefHeight="424.0" prefWidth="380.0" style="-fx-background-color: #9B5R5;">
          <children>
-            <PasswordField fx:id="password" layoutX="92.0" layoutY="176.0" prefHeight="26.0" prefWidth="242.0" promptText="Mot de passe" />
-            <Label layoutX="156.0" layoutY="59.0" style="-fx-font-weight: Bold;" text="Bienvenu" textAlignment="CENTER" textFill="WHITE">
+            <PasswordField fx:id="password" layoutX="92.0" layoutY="176.0" prefHeight="26.0" prefWidth="242.0" promptText="Password" />
+            <Label layoutX="156.0" layoutY="59.0" style="-fx-font-weight: Bold;" text="Welcome" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <TextField fx:id="username" layoutX="93.0" layoutY="126.0" prefHeight="26.0" prefWidth="242.0" promptText="E-Mail/Psudo" />
-            <Hyperlink fx:id="mail" layoutX="146.0" layoutY="326.0" onAction="#sendmail" text="Mot de pass obliée ?" textFill="WHITE" underline="true" />
-            <JFXButton fx:id="signup" buttonType="RAISED" layoutX="152.0" layoutY="293.0" onAction="#SignUp" ripplerFill="#f8aeae" style="-fx-max-height: Bold;" text="Créer un compte" textFill="#fffcfc" />
+            <TextField fx:id="username" layoutX="93.0" layoutY="126.0" prefHeight="26.0" prefWidth="242.0" promptText="E-Mail/Username" />
+            <Hyperlink fx:id="mail" layoutX="160.0" layoutY="329.0" onAction="#sendmail" text="Forgot password ?" textFill="#5779ff" underline="true" />
+            <JFXButton fx:id="signup" buttonType="RAISED" layoutX="165.0" layoutY="293.0" onAction="#SignUp" ripplerFill="#f8aeae" style="-fx-max-height: Bold;" text="Create account" textFill="#fffcfc" />
             <Label fx:id="msg" layoutX="86.0" layoutY="387.0" textFill="#ff0303" />
-            <JFXButton fx:id="button" buttonType="RAISED" layoutX="122.0" layoutY="261.0" onAction="#LoginAction" prefHeight="32.0" prefWidth="164.0" text="Connecter" textFill="#fffdfd" />
-            <JFXCheckBox fx:id="remember" layoutX="91.0" layoutY="220.0" prefHeight="18.0" prefWidth="226.0" text="Rester Conecter" textFill="WHITE" unCheckedColor="WHITE" />
+            <JFXButton fx:id="button" buttonType="RAISED" layoutX="131.0" layoutY="261.0" onAction="#LoginAction" prefHeight="32.0" prefWidth="164.0" text="Connect" textFill="#fffdfd" />
+            <JFXCheckBox fx:id="remember" layoutX="91.0" layoutY="220.0" prefHeight="18.0" prefWidth="226.0" text="Stay Connected" textFill="WHITE" unCheckedColor="WHITE" />
          </children>
       </AnchorPane>
       <ButtonBar layoutX="102.0" layoutY="181.0" prefHeight="40.0" prefWidth="200.0" />

@@ -18,14 +18,14 @@ private double x,y;
         primaryStage.initStyle(StageStyle.UNDECORATED);
 
         //drag screen
-        root.setOnMousePressed(event -> {
+        /*root.setOnMousePressed(event -> {
             x= event.getSceneX();
             y= event.getSceneY();
         });
         root.setOnMouseDragged(event -> {
             primaryStage.setX(event.getSceneX()-x);
             primaryStage.setY(event.getSceneY()-y);
-        });
+        });*/
         primaryStage.show();
     }
 

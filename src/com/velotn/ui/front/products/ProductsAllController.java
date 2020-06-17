@@ -3,6 +3,7 @@ package com.velotn.ui.front.products;
 import com.velotn.entity.*;
 import com.velotn.service.ServicePanier;
 import com.velotn.service.ServiceProduit;
+import com.velotn.service.WishlistService;
 import com.velotn.ui.front.Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -31,6 +32,7 @@ public class ProductsAllController implements Initializable {
     @FXML
     private AnchorPane showProd;
 
+    WishlistService wishlistService = new WishlistService();
     ServiceProduit serviceProduit = new ServiceProduit();
     ServicePanier servicePanier = new ServicePanier();
     private final ObservableList<Velo> dataV = FXCollections.observableArrayList();
@@ -81,6 +83,7 @@ public class ProductsAllController implements Initializable {
                                 "-fx-font-size: 30px");
                 Button btn = new Button("Preview");
                 Button btn1 = new Button("Buy");
+                Button btn2 = new Button("Add to wishlist");
                 HBox hBox = new HBox();
                 VBox vBox = new VBox();
                 if(Controller.getUserId() == 0){
@@ -119,7 +122,27 @@ public class ProductsAllController implements Initializable {
                             "-fx-pref-height: 40;" +
                             "-fx-pref-width: 100;"
                     );
+                    btn2.setStyle(   "-fx-background-radius: 0;" +
+                            "-fx-border-color: transparent;" +
+                            "-fx-border-width: 0;" +
+                            "-fx-background-color: #4447e5;" +
+                            "-fx-font-size: 14px;" +
+                            "-fx-text-fill: #ffffff;" +
+                            "-fx-pref-height: 40;" +
+                            "-fx-pref-width: 200;"
+                    );
                     int finalI = i;
+                    btn2.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            Wishlist wishlist = new Wishlist(produits.get(finalI).getId(),Controller.getUserId());
+                            try{
+                                wishlistService.ajouter(wishlist);
+                            }catch(SQLException e){
+                                e.printStackTrace();
+                            }
+                        }
+                    });
                     btn1.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
                         @Override
                         public void handle(ActionEvent event) {
@@ -135,7 +158,7 @@ public class ProductsAllController implements Initializable {
                     hBox.setSpacing(0);
                     hBox.getChildren().addAll(btn,btn1);
                     vBox.setAlignment(Pos.CENTER);
-                    vBox.getChildren().addAll(label,imageView,label1,hBox);
+                    vBox.getChildren().addAll(label,imageView,label1,hBox,btn2);
                     gridPane.addColumn(i,vBox);
                 }
         }

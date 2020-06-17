@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane prefHeight="747.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.velotn.ui.front.profile.ProfileUiController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="50.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#openProfile" styleClass="fancyBtn" stylesheets="@../../../css/style.css" text="Profile">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#openOrders" styleClass="fancyBtn" stylesheets="@../../../css/style.css" text="Orders" />
+            <Button mnemonicParsing="false" onAction="#openComplaints" styleClass="fancyBtn" stylesheets="@../../../css/style.css" text="Complaints" />
+            <Button mnemonicParsing="false" onAction="#openPassword" styleClass="fancyBtn" stylesheets="@../../../css/style.css" text="Password" />
+         </children>
+      </HBox>
+      <AnchorPane fx:id="profileSettings" layoutY="100.0" prefHeight="647.0" prefWidth="1000.0" />
+   </children>
+</AnchorPane>
